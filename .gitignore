@@ -16,4 +16,8 @@ bin/
 .project
 .settings/
 
-.minibase
+# minibase file
+*.minibase
+
+# sql file
+*.sql
