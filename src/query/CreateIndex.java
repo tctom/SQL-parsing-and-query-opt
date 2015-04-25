@@ -52,13 +52,12 @@ class CreateIndex implements Plan {
 	 * Executes the plan and prints applicable output.
 	 */
 	public void execute() {
-		HashIndex hindex = new HashIndex(indexName);
+		HashIndex hIndex = new HashIndex(indexName);
 		// scan heap file to build the hash index
 		FileScan fs = new FileScan(schema, new HeapFile(tableName));
-		int fn = schema.fieldNumber(colName);
 		while (fs.hasNext()) {
 			Tuple t = fs.getNext();
-			hindex.insertEntry(new SearchKey(t.getField(fn)), fs.getLastRID());
+			hIndex.insertEntry(new SearchKey(t.getField(colName)), fs.getLastRID());
 		}
 		fs.close();
 		Minibase.SystemCatalog.createIndex(indexName, tableName, colName);
