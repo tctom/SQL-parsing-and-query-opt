@@ -7,23 +7,24 @@ import parser.AST_Select;
  */
 class Select implements Plan {
 
-  /**
-   * Optimizes the plan, given the parsed query.
-   * 
-   * @throws QueryException if validation fails
-   */
-  public Select(AST_Select tree) throws QueryException {
+	/**
+	 * Optimizes the plan, given the parsed query.
+	 * 
+	 * @throws QueryException
+	 *             if validation fails
+	 */
+	public Select(AST_Select tree) throws QueryException {
+		
+	} // public Select(AST_Select tree) throws QueryException
 
-  } // public Select(AST_Select tree) throws QueryException
+	/**
+	 * Executes the plan and prints applicable output.
+	 */
+	public void execute() {
 
-  /**
-   * Executes the plan and prints applicable output.
-   */
-  public void execute() {
+		// print the output message
+		System.out.println("0 rows affected. (Not implemented)");
 
-    // print the output message
-    System.out.println("0 rows affected. (Not implemented)");
-
-  } // public void execute()
+	} // public void execute()
 
 } // class Select implements Plan
